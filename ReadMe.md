@@ -8,3 +8,9 @@
 2. Установите зависимости:
    ```bash
    pip install -r requirements.txt
+   ```
+3. Пропишите ваши учетные данные в ".env" файле.
+
+## Запуск
+``` bash
+   python main.py
