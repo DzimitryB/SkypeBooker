@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from skpy import Skype
 from datetime import datetime
 import re
+import time
 
 # Загружаем переменные из .env
 load_dotenv()
@@ -12,6 +13,15 @@ PASSWORD = os.getenv("SKYPE_PASSWORD")
 GROUP_ID = os.getenv("SKYPE_GROUP_ID")
 
 MESSAGE = "Привет, это автосообщение от бота!"
+
+# Получаем дату и время начала работы скрипта
+start_time_str = os.getenv("START_DATE")
+start_time = datetime.strptime(start_time_str, "%Y-%m-%d %H:%M:%S") if start_time_str else None
+
+if start_time:
+    while datetime.now() < start_time:
+        print(f"Ожидание начала работы скрипта: {start_time}")
+        time.sleep(60)  # Проверяем каждую минуту
 
 # Авторизация в Skype
 sk = Skype(USERNAME, PASSWORD)
