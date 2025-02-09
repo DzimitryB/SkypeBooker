@@ -26,17 +26,6 @@ if start_time:
 # Авторизация в Skype
 sk = Skype(USERNAME, PASSWORD)
 
-# # Получаем список всех недавних чатов
-# for chat in sk.chats.recent():
-#     if isinstance(chat, str):  # Если элемент — строковый ID
-#         chat_id = chat
-#         chat_name = chat  # В данном случае имя чата совпадает с его ID
-#     else:  # Если элемент — объект SkypeChat
-#         chat_id = chat.id
-#         chat_name = chat.topic or chat.userId
-
-#     print(f"Чат ID: {chat_id} | Название: {chat_name}")
-
 # list of parking spaces
 parking_list = list(map(int, os.getenv("PARKING_LIST", "").split(","))) if os.getenv("PARKING_LIST") else []
 

@@ -15,8 +15,15 @@ SKYPE_USERNAME=your_username
 SKYPE_PASSWORD=your_password
 SKYPE_GROUP_ID=your_group_id
 PARKING_LIST=1,2,3,4
+START_DATE=2025-02-10 06:12:00
 ```
 
 ## Запуск
 ``` bash
    python main.py
+```
+
+## Узнать ID группы
+``` bash
+python get_skype_group_id.py
+```
