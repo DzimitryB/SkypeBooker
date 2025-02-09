@@ -28,8 +28,8 @@ sk = Skype(USERNAME, PASSWORD)
 #     print(f"Чат ID: {chat_id} | Название: {chat_name}")
 
 # list of parking spaces
-parking_list = [138, 139, 167, 168, 169]
-
+# parking_list = [138, 139, 167, 168, 169]
+parking_list = list(map(int, os.getenv("PARKING_LIST", "").split(","))) if os.getenv("PARKING_LIST") else []
 
 # Получаем группу по ID
 chat = sk.chats[GROUP_ID]
@@ -60,7 +60,7 @@ def sort_lists(list1, list2):
             numbers_in_string = re.findall(r'-?\d+\.?\d*', item)  # Находим все числа в строке
             list1_numbers.extend(map(float, numbers_in_string))  # Добавляем найденные числа
 
-    # Получаем числа из второго списка, которых нет в первом
+    # Получаем числа из второго списка (с номерами парковочных мест), которых нет в первом
     result = [num for num in list2 if num not in list1_numbers]
     return result
 
