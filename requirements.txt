@@ -1,2 +1,2 @@
-skpy
+git+https://github.com/Terrance/SkPy@teams-migration
 python-dotenv
